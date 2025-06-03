@@ -1,0 +1,99 @@
+:root {
+    --bg-color: #f5f5f5;
+    --calculator-bg: #2d2d2d;
+    --display-bg: #1a1a1a;
+    --btn-bg: #3b3b3b;
+    --btn-operator-bg: #ff9500;
+    --btn-action-bg: #a5a5a5;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    width: 320px;
+    background-color: var(--calculator-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    background-color: var(--display-bg);
+    padding: 1.5rem;
+    text-align: right;
+    color: var(--text-light);
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.previous-operand {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    min-height: 1.2rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-light);
+    background-color: var(--btn-bg);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.span-2 {
+    width: 160px;
+}
+
+[data-action] {
+    background-color: var(--btn-action-bg);
+    color: var(--text-dark);
+}
+
+[data-action="add"],
+[data-action="subtract"],
+[data-action="multiply"],
+[data-action="divide"] {
+    background-color: var(--btn-operator-bg);
+    color: var(--text-light);
+}
+
+[data-action="calculate"] {
+    background-color: var(--btn-operator-bg);
+    color: var(--text-light);
+}
